@@ -20,6 +20,7 @@ hbs.registerPartials(partialPath)
 // We call it to create to express application as done below
 
 const app = express();
+const port = process.env.PORT || 3000
 //express method does not take any variable , but instead we confugire our ser ver using differnt methds provided on the application itself
 //it is a way to customize your server
 //static takes the folder that we want to serve up.
@@ -200,8 +201,8 @@ app.get('*', (req, res) => {
 //for example 8080  is the default port for them
 // the other optional parameter for the callback function is the calback function ,that function runs when the server is up and running
 //process of starting the server is async function 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 
 })
 
